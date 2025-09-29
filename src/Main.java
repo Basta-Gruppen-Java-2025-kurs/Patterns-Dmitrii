@@ -28,6 +28,8 @@ public class Main {
 
             ObserverPattern.news();
 
+            StrategyPattern.shop();
+
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
