@@ -14,6 +14,20 @@ public class Main {
                     .setPrintWriter(new PrintWriter(fw)).log("Logging to file").useTimestamp(false)
                     .log("Turned off timestamps").setPrintWriter(new PrintWriter(System.out))
                     .log("Ended logging to file");
+
+            for (String shapeName : new String[] {"square", "circle", "rectangle", "quadrilateral"}) {
+                try {
+                    logger.log("Creating a " + shapeName);
+                    Shape shape = ShapeFactory.createShape(shapeName);
+                    assert shape != null : "Failed to create " + shapeName;
+                    shape.draw();
+                } catch (Exception e) {
+                    System.out.println("Error: " + e);
+                }
+            }
+
+            ObserverPattern.news();
+
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
