@@ -9,8 +9,7 @@ public class AnalystObserver implements Observer {
     }
 
     @Override
-    public void update(String news, String agencyName) {
-        System.out.println("Analyst \033[1m" + name + "\033[22m received the news from \033[1m" + agencyName + "\033[22m: '" + news + "'");
-        System.out.println("Analysis: \033[3m" + analyze.apply(news) + "\033[23m");
+    public String update(String news, String agencyName) {
+        return "Analyst \033[1m" + name + "\033[22m received the news from \033[1m" + agencyName + "\033[22m: '" + news + "'\nAnalysis: \033[3m" + analyze.apply(news) + "\033[23m";
     }
 }

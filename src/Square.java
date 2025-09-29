@@ -1,6 +1,6 @@
 public class Square extends Shape{
     @Override
-    public void draw() {
-        System.out.println("□");
+    public void draw(Logger logger) {
+        logger.log("□");
     }
 }

@@ -1,3 +1,3 @@
 public interface Observer {
-    void update(String news, String agencyName);
+    String update(String news, String agencyName);
 }

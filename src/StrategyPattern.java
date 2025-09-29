@@ -1,5 +1,5 @@
 public class StrategyPattern {
-    public static void shop() {
+    public static void shop(Logger logger) {
         try {
             FixedDiscount fixedDiscount1 = new FixedDiscount(10.0);
             FixedDiscount fixedDiscount2 = new FixedDiscount(150.0);
@@ -8,21 +8,21 @@ public class StrategyPattern {
 
             Cart cart = new Cart();
             cart.setPrice(1000);
-            cart.pay();
+            cart.pay(logger);
             cart.setDiscountStrategy(fixedDiscount1);
-            cart.pay();
+            cart.pay(logger);
             cart.setDiscountStrategy(fixedDiscount2);
             cart.setPrice(400);
-            cart.pay();
+            cart.pay(logger);
             cart.setDiscountStrategy(percentageDiscount1);
             cart.setPrice(500);
-            cart.pay();
+            cart.pay(logger);
             cart.setDiscountStrategy(percentageDiscount2);
             cart.setPrice(3000);
-            cart.pay();
+            cart.pay(logger);
 
         } catch (Exception e) {
-            System.out.println("Error: " + e);
+            logger.log("Error: " + e);
         }
     }
 }

@@ -1,7 +1,7 @@
 public class ObserverPattern {
-    public static void news() {
-        NewsAgency morningDose = new NewsAgency("Morning Dose");
-        NewsAgency afternoonPost = new NewsAgency("Afternoon Post");
+    public static void news(Logger logger) {
+        NewsAgency morningDose = new NewsAgency("Morning Dose", logger);
+        NewsAgency afternoonPost = new NewsAgency("Afternoon Post", logger);
 
         ReaderObserver alice = new ReaderObserver("Alice");
         ReaderObserver bob = new ReaderObserver("Bob");
