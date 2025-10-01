@@ -15,6 +15,8 @@ public class Main {
 
             StrategyPattern.shop(logger);
 
+            DecoratorPattern.coffee(logger);
+
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
